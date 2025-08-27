@@ -1,22 +1,29 @@
-# Fixa E2E Test Suite
+Fixa E2E Test Suite
+This repository contains automated end-to-end tests for the Fixa Employee Management System, built using Playwright and TypeScript.
 
-This repository contains automated end-to-end tests for the [Fixa Employee Management System](https://app.staging.fixahr.com), built using [Playwright](https://playwright.dev/) and [TypeScript](https://www.typescriptlang.org/). The suite is designed to validate core workflows such as authentication & partial employee onboarding,partial mainly becuase of the limited time to set up and write tests
+The suite is designed to validate core workflows such as authentication and partial employee onboarding. Onboarding coverage is partial due to limited time available for setup and test implementation.
 
----
-
-## 📁 Project Structure
-
-fixa-e2e-tests/ ├── tests/ # Organized test specs │ ├── auth/ # Login and authentication tests │ │ ├── login.spec.ts │ │ └── invalid-login.spec.ts │ └── employees/ # Employee dashboard and onboarding tests │ └── add-employee.spec.ts ├── pages/ # Page Object Models for reusable selectors │ ├── login.page.ts │ └── employee.page.ts ├── mocks/ # Mock API responses │ └── employees.mock.ts ├── utils/ # Test data and helper functions │ └── test-data.ts ├── playwright.config.ts # Playwright configuration └── README.md # Project documentation
-
+📁 Project Structure
 Code
-
----
-
-##  Getting Started
-
-### 1. Clone the repository
-
-```bash
+fixa-e2e-tests/
+├── tests/                  # Organized test specs
+│   ├── auth/               # Login and authentication tests
+│   │   ├── login.spec.ts
+│   │   └── invalid-login.spec.ts
+│   └── employees/          # Employee dashboard and onboarding tests
+│       └── add-employee.spec.ts
+├── pages/                  # Page Object Models for reusable selectors
+│   ├── login.page.ts
+│   └── employee.page.ts
+├── mocks/                  # Mock API responses
+│   └── employees.mock.ts
+├── utils/                  # Test data and helper functions
+│   └── test-data.ts
+├── playwright.config.ts    # Playwright configuration
+└── README.md               # Project documentation
+🚀 Getting Started
+1. Clone the repository
+bash
 git clone https://github.com/your-username/fixa-e2e-tests.git
 cd fixa-e2e-tests
 2. Install dependencies
@@ -41,7 +48,7 @@ npx playwright test --headed
 View HTML report
 bash
 npx playwright show-report
-Authentication Coverage
+🔐 Authentication Coverage
 Authentication flows are located in tests/auth/:
 
 login.spec.ts: Valid login with correct credentials
@@ -63,7 +70,7 @@ add-employee.spec.ts: Adds a new employee manually via the onboarding flow
 
 Includes form validation, gender selection, and submission logic
 
-Attempts Uses mock API responses for consistency
+Uses mock API responses for consistency
 
 🕒 CI Integration
 To run tests daily via GitHub Actions, use the workflow defined in:
